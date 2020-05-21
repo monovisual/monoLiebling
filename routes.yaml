@@ -11,14 +11,14 @@ routes:
   /account/:
     template: members/account
     data: page.account
+  /rss/:
+    template: rss
+    content_type: text/xml
 
 collections:
   /:
     permalink: /{slug}/
     template: index
-/rss/:
-    template: rss
-    content_type: text/xml
 
 taxonomies:
   tag: /tag/{slug}/
