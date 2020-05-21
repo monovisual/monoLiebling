@@ -16,6 +16,9 @@ collections:
   /:
     permalink: /{slug}/
     template: index
+/rss/:
+    template: rss
+    content_type: text/xml
 
 taxonomies:
   tag: /tag/{slug}/
