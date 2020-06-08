@@ -54,11 +54,13 @@ into the {body} of the default.hbs template --}}
                   </button>
                 </div>
               </div>
-              <audio controls>
-                <source src="{{og_title}}" type="audio/mp3">
-                <p>Your browser doesn't support HTML audio.</p>
-              </audio>
-              <a href="{{og_title}}">Download MP3</a>
+              <div>
+                <audio controls>
+                  <source src="{{og_title}}" type="audio/mp3">
+                  <p>Your browser doesn't support HTML audio.</p>
+                </audio>
+                <a href="{{og_title}}">Download MP3</a>
+              </div>
               {{content}}
             </div>
           </div>
