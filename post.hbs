@@ -9,64 +9,72 @@ into the {body} of the default.hbs template --}}
 <div class="main-wrap">
   {{!-- Everything inside the #post tags pulls data from the post --}}
   {{#post}}
-    {{!-- Special header.hbs partial to generate the <header> tag --}}
-    {{> header background=feature_image}}
-    {{!-- Inject styles of the hero image to make it responsive --}}
-    {{> hero background=feature_image}}
-    </section>
+  {{!-- Special header.hbs partial to generate the <header> tag --}}
+  {{> header background=feature_image}}
+  {{!-- Inject styles of the hero image to make it responsive --}}
+  {{> hero background=feature_image}}
+  </section>
   {{/post}}
-  
+
   <main>
     <article>
       <div class="l-content in-post">
         {{!-- Everything inside the #post tags pulls data from the post --}}
         {{#post}}
-          <div class="l-wrapper in-post {{#unless feature_image}}no-image{{/unless}} js-aos-wrapper" data-aos="fade-up" data-aos-delay="300">
-            <div class="l-post-content {{#if @labs.subscribers}}has-subscribe-form{{/if}} {{#if @labs.members}}has-subscribe-form{{/if}} js-progress-content">
-              <header class="m-heading">
-                <h1 class="m-heading__title in-post">{{title}}</h1>
-                <div class="m-heading__meta">
-                  {{#if primary_tag}}
-                    <a href="{{primary_tag.url}}" class="m-heading__meta__tag">{{primary_tag.name}}</a>
-                    <span class="m-heading__meta__divider">&bull;</span>
-                  {{/if}}
-                  <span class="m-heading__meta__time">{{date published_at}}</span>
-                </div>
-              </header>
-              <div class="pos-relative js-post-content">
-                <div class="m-share">
-                  <div class="m-share__content js-sticky">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute='true'}}" class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Facebook">
-                      <span class="icon-facebook"></span>
-                    </a>
-                    <a href="https://twitter.com/intent/tweet?text={{encode title}}&url={{url absolute='true'}}" class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Twitter">
-                      <span class="icon-twitter"></span>
-                    </a>
-                    <button class="m-icon-button filled in-share progress js-scrolltop" aria-label="Scroll to top">
-                      <span class="icon-arrow-top"></span>
-                      <svg>
-                        <circle class="progress-ring__circle js-progress" fill="transparent" r="0" />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                {{content}}
+        <div class="l-wrapper in-post {{#unless feature_image}}no-image{{/unless}} js-aos-wrapper" data-aos="fade-up"
+          data-aos-delay="300">
+          <div
+            class="l-post-content {{#if @labs.subscribers}}has-subscribe-form{{/if}} {{#if @labs.members}}has-subscribe-form{{/if}} js-progress-content">
+            <header class="m-heading">
+              <h1 class="m-heading__title in-post">{{title}}</h1>
+              <div class="m-heading__meta">
+                {{#if primary_tag}}
+                <a href="{{primary_tag.url}}" class="m-heading__meta__tag">{{primary_tag.name}}</a>
+                <span class="m-heading__meta__divider">&bull;</span>
+                {{/if}}
+                <span class="m-heading__meta__time">{{date published_at}}</span>
               </div>
+            </header>
+            <div class="pos-relative js-post-content">
+              <div class="m-share">
+                <div class="m-share__content js-sticky">
+                  <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute='true'}}"
+                    class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Facebook">
+                    <span class="icon-facebook"></span>
+                  </a>
+                  <a href="https://twitter.com/intent/tweet?text={{encode title}}&url={{url absolute='true'}}"
+                    class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Twitter">
+                    <span class="icon-twitter"></span>
+                  </a>
+                  <button class="m-icon-button filled in-share progress js-scrolltop" aria-label="Scroll to top">
+                    <span class="icon-arrow-top"></span>
+                    <svg>
+                      <circle class="progress-ring__circle js-progress" fill="transparent" r="0" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <audio controls>
+                <source src="{{og_title}}" type="audio/mp3">
+                <p>Your browser doesn't support HTML audio. <a href="{{og_title}}" Here</a> is a link to the file</a>
+                </p>
+              </audio>
+              <a href="{{og_title}}Download MP3" {{content}} </div>
             </div>
           </div>
           {{!-- Email subscribe form at the bottom of the page --}}
           {{#if @labs.subscribers}}
-            <section class="m-subscribe-section">
-              <div class="l-wrapper in-post">
-                <div class="m-subscribe-section__content">
-                  <div class="m-subscribe-section__text">
-                    <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
-                    <p class="m-subscribe-section__description">
-                      {{t "Get the latest posts delivered right to your inbox."}}
-                    </p>
-                  </div>
-                  <div class="m-subscribe-section__form">
-                    {{subscribe_form
+          <section class="m-subscribe-section">
+            <div class="l-wrapper in-post">
+              <div class="m-subscribe-section__content">
+                <div class="m-subscribe-section__text">
+                  <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
+                  <p class="m-subscribe-section__description">
+                    {{t "Get the latest posts delivered right to your inbox."}}
+                  </p>
+                </div>
+                <div class="m-subscribe-section__form">
+                  {{subscribe_form
                             form_id="subscribe-form"
                             form_class="m-subscribe-section__form"
                             input_id="subscribe_input"
@@ -75,36 +83,36 @@ into the {body} of the default.hbs template --}}
                             button_class="m-button primary block"
                             placeholder=(t "Your email address")
                           }}
-                  </div>
                 </div>
               </div>
-            </section>
+            </div>
+          </section>
           {{/if}}
           {{#if @labs.members}}
-            <section class="m-subscribe-section">
-              <div class="l-wrapper in-post">
-                <div class="m-subscribe-section__content">
-                  <div class="m-subscribe-section__text">
-                    <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
-                    <p class="m-subscribe-section__description">
-                      {{t "Get the latest posts delivered right to your inbox."}}
-                    </p>
-                  </div>
-                  <div class="m-subscribe-section__form">
-                    {{> "newsletter-form"}}
-                  </div>
+          <section class="m-subscribe-section">
+            <div class="l-wrapper in-post">
+              <div class="m-subscribe-section__content">
+                <div class="m-subscribe-section__text">
+                  <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
+                  <p class="m-subscribe-section__description">
+                    {{t "Get the latest posts delivered right to your inbox."}}
+                  </p>
+                </div>
+                <div class="m-subscribe-section__form">
+                  {{> "newsletter-form"}}
                 </div>
               </div>
-            </section>
+            </div>
+          </section>
           {{/if}}
           <section class="m-author">
             <div class="m-author__content">
               <div class="m-author__picture">
                 <a href="{{primary_author.url}}" class="m-author-picture" aria-label="Author picture">
                   {{#if primary_author.profile_image}}
-                    <div style="background-image: url({{primary_author.profile_image}});"></div>
+                  <div style="background-image: url({{primary_author.profile_image}});"></div>
                   {{else}}
-                    <div style="background-image: url({{asset "images/default-avatar-square-small.jpg"}});"></div>
+                  <div style="background-image: url({{asset "images/default-avatar-square-small.jpg"}});"></div>
                   {{/if}}
                 </a>
               </div>
@@ -113,34 +121,36 @@ into the {body} of the default.hbs template --}}
                   <a href="{{primary_author.url}}">{{primary_author.name}}</a>
                 </h4>
                 {{#has author="count:>1"}}
-                  <p class="m-small-text in-author-along-with">
-                    {{authors separator=", " prefix=(t "Among with no break line") from="2"}}
-                  </p>
+                <p class="m-small-text in-author-along-with">
+                  {{authors separator=", " prefix=(t "Among with no break line") from="2"}}
+                </p>
                 {{/has}}
                 {{#if primary_author.bio}}
-                  <p class="m-author__bio">{{primary_author.bio}}</p>
+                <p class="m-author__bio">{{primary_author.bio}}</p>
                 {{/if}}
                 <ul class="m-author-links">
                   {{#if primary_author.website}}
-                    <li>
-                      <a href="{{primary_author.website}}" target="_blank" rel="noopener" aria-label="Website">
-                        <span class="icon-globe"></span>
-                      </a>
-                    </li>
+                  <li>
+                    <a href="{{primary_author.website}}" target="_blank" rel="noopener" aria-label="Website">
+                      <span class="icon-globe"></span>
+                    </a>
+                  </li>
                   {{/if}}
                   {{#if primary_author.facebook}}
-                    <li>
-                      <a href="https://facebook.com/{{primary_author.facebook}}" target="_blank" rel="noopener" aria-label="Facebook">
-                        <span class="icon-facebook"></span>
-                      </a>
-                    </li>
+                  <li>
+                    <a href="https://facebook.com/{{primary_author.facebook}}" target="_blank" rel="noopener"
+                      aria-label="Facebook">
+                      <span class="icon-facebook"></span>
+                    </a>
+                  </li>
                   {{/if}}
                   {{#if primary_author.twitter}}
-                    <li>
-                      <a href="https://twitter.com/{{primary_author.twitter}}" target="_blank" rel="noopener" aria-label="Twitter">
-                        <span class="icon-twitter"></span>
-                      </a>
-                    </li>
+                  <li>
+                    <a href="https://twitter.com/{{primary_author.twitter}}" target="_blank" rel="noopener"
+                      aria-label="Twitter">
+                      <span class="icon-twitter"></span>
+                    </a>
+                  </li>
                   {{/if}}
                 </ul>
               </div>
@@ -172,9 +182,9 @@ into the {body} of the default.hbs template --}}
             </div>
           </section>
           --}}
-        {{/post}}
-        {{!-- Related posts --}}
-        {{#get "posts" limit="3" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags,authors" as |related|}}
+          {{/post}}
+          {{!-- Related posts --}}
+          {{#get "posts" limit="3" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags,authors" as |related|}}
           <section class="m-recommended">
             <div class="l-wrapper in-recommended">
               <h3 class="m-section-title in-recommended">{{t "Recommended for you"}}</h3>
@@ -186,13 +196,13 @@ into the {body} of the default.hbs template --}}
               </div>
             </div>
           </section>
-        {{/get}}
-      </div>
+          {{/get}}
+        </div>
     </article>
   </main>
 </div>
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
-  <script defer src="{{asset "js/post.js"}}"></script>
+<script defer src="{{asset "js/post.js"}}"></script>
 {{/contentFor}}
