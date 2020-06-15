@@ -57,9 +57,7 @@ into the {body} of the default.hbs template --}}
               <div>
                 <audio controls style="width: 100%;">
                   <source src="{{og_description}}" type="audio/mp3">
-                  <a href="{{og_description}}" download>
-                    <p>Download MP3</p>
-                  </a>
+                  <p>Your browser doesn't support HTML audio. <a href="{{og_description}}" download> Download the MP3</a> instead.</p>
                 </audio>
               </div>
               {{content}}
