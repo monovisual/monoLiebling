@@ -55,11 +55,14 @@ into the {body} of the default.hbs template --}}
                 </div>
               </div>
               <div>
-                <audio controls preload="metadata" style="width: 100%;">
-                  <source src="{{og_description}}" type="audio/mpeg">
-                  <p>Your browser doesn't support HTML5 audio. Here is a <a href="{{og_description}}"> link to the
-                      MP3</a> instead.</p>
-                </audio>
+                <figure>
+                  <audio controls preload="metadata" style="width: 100%;">
+                    <source src="{{og_description}}" type="audio/mpeg">
+                    <p>Your browser doesn't support HTML5 audio. Here is a <a href="{{og_description}}"> link to the
+                        MP3</a> instead.</p>
+                  </audio>
+                  <figcaption>Right-click on the player to save the MP3.</figcaption>
+                </figure>
               </div>
               {{content}}
             </div>
