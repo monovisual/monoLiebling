@@ -2789,14 +2789,14 @@ _:-ms-fullscreen {
     flex-direction: column;
     min-height: 100px;
     overflow: hidden;
-    padding: 100px 0 75px;
+    padding: 0;
     background-color: var(--secondary-subtle-color)
 }
 
 @media only screen and (min-width:48rem) {
     .m-hero {
         min-height: 100px;
-        padding: 150px 0 75px
+        padding: 0
     }
 }
 
