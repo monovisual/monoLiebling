@@ -11,8 +11,8 @@
     <article class="m-article-card no-picture {{post_class}}">
       <div class="m-article-card__picture">
   {{/if}}
-      {{!-- <a href="{{url}}" class="m-article-card__picture-link" aria-label="Article"></a>
-      <a href="{{primary_author.url}}" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="{{t "Posted by"}} {{primary_author.name}} {{authors autolink="false" from="2" prefix=(t "Among with") separator=" , "}}">
+      <a href="{{url}}" class="m-article-card__picture-link" aria-label="article"></a>
+      {{!-- <a href="{{primary_author.url}}" class="m-article-card__author js-tooltip" aria-label="authors" data-tippy-content="{{t "posted by"}} {{primary_author.name}} {{authors autolink="false" from="2" prefix=(t "among with") separator=" , "}}">
         {{#if primary_author.profile_image}}
           <div style="background-image: url({{img_url primary_author.profile_image size="xs"}});"></div>
         {{else}}
