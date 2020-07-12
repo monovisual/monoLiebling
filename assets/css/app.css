@@ -3338,7 +3338,7 @@ _:-ms-fullscreen {
     flex: 1;
     position: relative;
     padding-top: 48px;
-    height: 200px;
+    height: 100px;
     overflow: hidden;
     border-radius: 0 0 10px 10px;
     background-color: var(--background-color)
