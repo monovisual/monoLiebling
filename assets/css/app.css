@@ -3180,7 +3180,7 @@ _:-ms-fullscreen {
 @media only screen and (min-width:64rem) {
     .m-article-card {
         /* width: calc(33.33333% - 40px); */
-        width: calc(33.33333% - 40px);
+        width: 320px;
         margin-left: 20px;
         margin-right: 20px;
         margin-bottom: 40px
