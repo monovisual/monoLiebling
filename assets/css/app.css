@@ -5597,7 +5597,7 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 }
 
 [data-aos=fade-down]:not(.no-aos-animation) {
-    transform: translate3d(0, -100px, 0)
+    transform: translate3d(0, -220px, 0)
 }
 
 [data-aos=fade-right]:not(.no-aos-animation) {
