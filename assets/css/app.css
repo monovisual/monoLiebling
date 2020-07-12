@@ -2787,7 +2787,7 @@ _:-ms-fullscreen {
 .m-hero {
     position: relative;
     flex-direction: column;
-    min-height: 100px;
+    min-height: 0;
     overflow: hidden;
     padding: 0;
     background-color: var(--secondary-subtle-color)
@@ -2795,7 +2795,7 @@ _:-ms-fullscreen {
 
 @media only screen and (min-width:48rem) {
     .m-hero {
-        min-height: 100px;
+        min-height: 0;
         padding: 0
     }
 }
