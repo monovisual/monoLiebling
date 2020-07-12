@@ -3169,8 +3169,8 @@ _:-ms-fullscreen {
 @media only screen and (min-width:48rem) {
     .m-article-card {
         /* width: calc(50% - 20px); */
-        width: calc(60% - 20px);
-        height: 500px;
+        width: 320px;
+        height: 450px;
         margin-left: 10px;
         margin-right: 10px;
         margin-bottom: 20px
@@ -3180,7 +3180,7 @@ _:-ms-fullscreen {
 @media only screen and (min-width:64rem) {
     .m-article-card {
         /* width: calc(33.33333% - 40px); */
-        width: calc(40% - 40px);
+        width: calc(33.33333% - 40px);
         margin-left: 20px;
         margin-right: 20px;
         margin-bottom: 40px
@@ -3236,7 +3236,7 @@ _:-ms-fullscreen {
 
 .m-article-card__picture {
     position: relative;
-    height: 400px;
+    height: 300px;
     border-radius: 10px 10px 0 0;
     background-color: var(--secondary-subtle-color);
     background-repeat: no-repeat;
@@ -3246,7 +3246,7 @@ _:-ms-fullscreen {
 
 @media only screen and (min-width:48rem) {
     .m-article-card__picture {
-        height: 420px
+        height: 300px
     }
 }
 

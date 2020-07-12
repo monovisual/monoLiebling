@@ -49,7 +49,7 @@ into the {body} of the default.hbs template --}}
                       {{#if primary_author.profile_image}}
                       <div style="background-image: url({{img_url primary_author.profile_image size="xs"}});"></div>
                       {{else}}
-                      <div style="background-image: url({{asset "images/default-avatar-square-small.jpg"}});"></div>
+                      <div style="background-image: url({{asset "images/default-avatar-square-small.jpg";}});"></div>
                       {{/if}}
                     </a>
                     {{#if primary_tag}}
