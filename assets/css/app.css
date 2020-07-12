@@ -587,7 +587,7 @@ img.lozad.loaded {
 [class*=" icon-"],
 [class^=icon-] {
     font-family: icomoon !important;
-    /* speak: none; */
+    speak: none;
     font-style: normal;
     font-weight: 400;
     font-variant: normal;
@@ -2807,13 +2807,13 @@ _:-ms-fullscreen {
 
 @media only screen and (min-width:48rem) {
     .m-hero.with-picture {
-        max-height: 100px
+        min-height: 450px
     }
 }
 
 @media only screen and (min-width:80rem) {
     .m-hero.with-picture {
-        max-height: 100px
+        min-height: 565px
     }
 }
 
