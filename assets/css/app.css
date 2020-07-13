@@ -3337,8 +3337,8 @@ _:-ms-fullscreen {
 .m-article-card__info {
     flex: 1;
     position: relative;
-    padding-top: 85px;
-    height: 100px;
+    padding-top: 48px;
+    height: 300px;
     overflow: hidden;
     border-radius: 0 0 10px 10px;
     background-color: var(--background-color)
